@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APP COMPPAREOR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .search-section {
+            text-align: center;
+            margin: 40px 20px;
+        }
+
+        .search-section input {
+            width: 60%;
+            max-width: 500px;
+            padding: 12px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-section button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+            transition: 0.3s;
+        }
+
+        .search-section button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .products {
+            padding: 20px;
+        }
+
+        .products h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+        }
+
+        .price {
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .buy-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            background-color: #1e3a8a;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: #0f172a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1e3a8a;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    APP COMPPAREOR
+</header>
+
+<section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search for products...">
+    <button onclick="searchProduct()">Search</button>
+</section>
+
+<section class="products">
+    <h2>Trending Products</h2>
+    <div class="product-grid">
+     <div class="product-card" data-name="IPhone 17 pro max">
+            <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-pro-storage-select-202509-6-9inch-cosmicorange?wid=5120&hei=2880&fmt=webp&qlt=90&.v=ai9heDl3NVJxWmxhWTF3WFFidmVHRkIvTXY5NjBUQVhVcnFORUt4SFI2QnNaY0pDSXA4b05MOXZJbUFoN3N5cktnTnpPa21yZUQxSjFTdTFYZzRWVHprMCtUNWwzYWR0UVU3TWVsbEdUeXV0dnhVVHVwTllva0RRUVdaK0xFNFBCc1hsQUFLL0ZUN1lybnd3ZU1hVGl3&traceId=1" alt="IPhone 17 pro max">
+            <h3>IPhone 17 pro max</h3>
+            <div class="price">1.5Lack Rs.</div>
+   <a href="ss.html">
+    <button class="buy-btn">Buy Now</button>
+</a>
+        </div>
+       <div class="product-card" data-name="Wireless Headphones">
+            <img src="https://www.boat-lifestyle.com/cdn/shop/files/Artboard1_0684daf7-e7d9-4224-9724-07271a45c73a_600x.png?v=1698315950" alt="Headphones">
+            <h3>Wireless Headphones</h3>
+            <div class="price">1799 Rs.</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <div class="product-card" data-name="Smart Watch">
+            <img src="https://www.leafstudios.in/cdn/shop/files/1_1099cd20-7237-4bdf-a180-b7126de5ef3d_1000x.png?v=1722230645" alt="Smart Watch">
+            <h3>Smart Watch</h3>
+            <div class="price">4999 Rs.</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        
+        <div class="product-card" data-name="Bluetooth Speaker">
+            <img src="https://media.wired.com/photos/6698764221d442cdea712848/4:3/w_640%2Cc_limit/Bose-SoundLink-Max-Bluetooth-Speaker%2520(black)-Offwhite-Background-SOURCE-Amazon.jpg" alt="Speaker">
+            <h3>Bluetooth Speaker</h3>
+            <div class="price">12000 Rs.</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 APP COMPPAREOR | All Rights Reserved
+</footer>
+
+<script>
+    function searchProduct() {
+        let input = document.getElementById("searchInput").value.toLowerCase().trim();
+        let products = document.querySelectorAll(".product-card");
+
+        products.forEach(function(product) {
+            let name = product.getAttribute("data-name").toLowerCase();
+
+            if (input === "" || name.includes(input)) {
+                product.style.display = "";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    }
+
+    document.getElementById("searchInput").addEventListener("keyup", searchProduct);
+</script>
+
+</body>
+</html>
