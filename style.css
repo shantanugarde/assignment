@@ -1,0 +1,166 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #DBE9F4;
+    margin: 0;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 26px;
+}
+
+/* Main Product Section */
+.con {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 30px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 1200px;
+}
+
+.iphone-img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.discription {
+    font-size: 18px;
+    margin-left: 40px;
+}
+
+/* Cards Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    border: 2px solid blue;
+    background: #EFDFBB;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.product-img {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.info {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.buttons a {
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.buy { background: orange; }
+.cart { background: orange; }
+.visit { background: blue; }
+
+/* Recommendation */
+.recommendation {
+    margin-top: 30px;
+    padding: 15px;
+    background: #d4edda;
+    border-left: 5px solid green;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* -------- Tablet View -------- */
+@media (max-width: 992px) {
+    .con {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .discription {
+        margin-left: 0;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .iphone-img {
+        width: 250px;
+        margin: auto;
+    }
+
+    .card {
+        width: 45%;
+    }
+}
+
+/* -------- Mobile View -------- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .con {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .iphone-img {
+        width: 200px;
+    }
+
+    .discription {
+        font-size: 14px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+
+    .buttons a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .recommendation {
+        font-size: 16px;
+    }
+}
